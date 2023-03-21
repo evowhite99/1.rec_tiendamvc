@@ -91,35 +91,40 @@ class CartController extends Controller
             $this->view('carts/address', $data);
 
         } else {
-            $data = [
-                'titulo' => 'Carrito | Checkout',
-                'subtitle' => 'Checkout | Iniciar sesion',
-                'menu' => true
-            ];
+            header('location:' . ROOT);
 
-            $this->view('carts/checkout', $data);
         }
     }
 
     public function paymentmode()
     {
-        $paymentMethods = $this->model->getAll();
+        $session = new Session();
+        if ($session->getLogin()) {
 
-        $data = [
-            'titulo' => 'Carrito | Forma de pago',
-            'subtitle' => 'Checkout | Forma de pago',
-            'menu' => true,
-            'payment' => $paymentMethods,
+            $paymentMethods = $this->model->getAll();
 
-        ];
+            $data = [
+                'titulo' => 'Carrito | Forma de pago',
+                'subtitle' => 'Checkout | Forma de pago',
+                'menu' => true,
+                'payment' => $paymentMethods,
 
-        $this->view('carts/paymentmode', $data);
+            ];
+
+            $this->view('carts/paymentmode', $data);
+        } else {
+            header('location:' . ROOT);
+
+
+        }
     }
 
     public function verify()
     {
         $session = new Session();
-        $user = $session->getUser();
+        if ($session->getLogin()) {
+
+            $user = $session->getUser();
         $cart = $this->model->getCart($user->id);
         $payment_id = $_POST['payment_method'] ?? '';
         $pay = $this->model->getPayment($payment_id);
@@ -132,12 +137,18 @@ class CartController extends Controller
         ];
 
         $this->view('carts/verify', $data);
+        } else {
+
+            header('location:' . ROOT);
+
+        }
     }
 
     public function thanks()
     {
         $session = new Session();
-        $user = $session->getUser();
+        if ($session->getLogin()) {
+            $user = $session->getUser();
 
         $cartItems = $this->model->getCart($user->id);
         $subtotal = 0;
@@ -175,7 +186,11 @@ class CartController extends Controller
             $this->view('mensaje', $data);
 
         }
+    } else {
 
+            header('location:' . ROOT);
+
+        }
 
     }
 }
