@@ -121,8 +121,8 @@ class CartController extends Controller
         $session = new Session();
         $user = $session->getUser();
         $cart = $this->model->getCart($user->id);
-        $paymentId = $_POST['payment_method'] ?? '';
-        $pay = $this->model->getPayment($paymentId);
+        $payment_id = $_POST['payment_method'] ?? '';
+        $pay = $this->model->getPayment($payment_id);
         $data = [
             'titulo' => 'Carrito | Verificar los datos',
             'menu' => true,

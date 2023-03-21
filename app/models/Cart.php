@@ -17,10 +17,10 @@ class Cart
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function getPayment($id)
+    public function getPayment($payment_id)
     {
-        $query = $this->db->prepare('SELECT * FROM payments WHERE id = :id');
-        $query->execute([':id' => $id]);
+        $query = $this->db->prepare('SELECT * FROM payments WHERE payment_id = :payment_id');
+        $query->execute([':payment_id' => $payment_id]);
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
