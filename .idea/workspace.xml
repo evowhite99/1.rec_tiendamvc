@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a833da-8b10-4778-be69-7e73f25e8198" name="Changes" comment="Ejercicio 5 medio">
+    <list default="true" id="a2a833da-8b10-4778-be69-7e73f25e8198" name="Changes" comment="Ejercicio 6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AdminProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AdminProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/03652_threesisters_2880x1800.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/03652_threesisters_2880x1800.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <workItem from="1679343032877" duration="115000" />
       <workItem from="1679359510667" duration="375000" />
       <workItem from="1679408588678" duration="290000" />
-      <workItem from="1679408971250" duration="4573000" />
+      <workItem from="1679408971250" duration="5232000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de examen">
       <created>1679085639433</created>
@@ -145,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679412914621</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ejercicio 6">
+      <created>1679413931343</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679413931343</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +192,7 @@
     <MESSAGE value="Ejercicio 3 sigue" />
     <MESSAGE value="Ejercicio 4" />
     <MESSAGE value="Ejercicio 5 medio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 5 medio" />
+    <MESSAGE value="Ejercicio 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 6" />
   </component>
 </project>

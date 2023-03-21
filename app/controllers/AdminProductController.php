@@ -70,6 +70,9 @@ class AdminProductController extends Controller
             if (empty($name)) {
                 array_push($errors, 'El nombre del producto es requerido');
             }
+            if (! is_numeric($status)) {
+                array_push($errors, 'Elige un estado inactivo o activo');
+            }
             if (empty($description)) {
                 array_push($errors, 'La descripción del producto es requerida');
             }
@@ -218,6 +221,9 @@ class AdminProductController extends Controller
             // Validamos la información
             if (empty($name)) {
                 array_push($errors, 'El nombre del producto es requerido');
+            }
+            if (! is_numeric($status)) {
+                array_push($errors, 'Elige un estado inactivo o activo');
             }
             if (empty($description)) {
                 array_push($errors, 'La descripción del producto es requerida');
