@@ -9,6 +9,21 @@ class Cart
         $this->db = Mysqldb::getInstance()->getDatabase();
     }
 
+    public function getAll()
+    {
+        $query = $this->db->prepare('SELECT * FROM payments');
+        $query->execute();
+
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getPayment($id)
+    {
+        $query = $this->db->prepare('SELECT * FROM payments WHERE id = :id');
+        $query->execute([':id' => $id]);
+
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
     public function verifyProduct($product_id, $user_id)
     {
         $sql = 'SELECT * FROM carts WHERE product_id=:product_id AND user_id=:user_id';

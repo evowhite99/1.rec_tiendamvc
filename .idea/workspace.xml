@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2a833da-8b10-4778-be69-7e73f25e8198" name="Changes" comment=".">
+    <list default="true" id="a2a833da-8b10-4778-be69-7e73f25e8198" name="Changes" comment="Inicio examen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/carts/paymentmode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/carts/paymentmode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/carts/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/carts/verify.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +79,11 @@
       <workItem from="1679085134006" duration="183000" />
       <workItem from="1679085335905" duration="632000" />
       <workItem from="1679247580228" duration="2957000" />
-      <workItem from="1679325072400" duration="355000" />
+      <workItem from="1679325072400" duration="789000" />
+      <workItem from="1679343032877" duration="115000" />
+      <workItem from="1679359510667" duration="375000" />
+      <workItem from="1679408588678" duration="290000" />
+      <workItem from="1679408971250" duration="1765000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio de examen">
       <created>1679085639433</created>
@@ -105,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679251245729</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Inicio examen">
+      <created>1679325769535</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679325769535</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +154,7 @@
     <MESSAGE value="Inicio de examen." />
     <MESSAGE value="Inicio de examen.." />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Inicio examen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inicio examen" />
   </component>
 </project>

@@ -103,10 +103,14 @@ class CartController extends Controller
 
     public function paymentmode()
     {
+        $paymentMethods = $this->model->getAll();
+
         $data = [
             'titulo' => 'Carrito | Forma de pago',
             'subtitle' => 'Checkout | Forma de pago',
             'menu' => true,
+            'payment' => $paymentMethods,
+
         ];
 
         $this->view('carts/paymentmode', $data);
@@ -117,12 +121,12 @@ class CartController extends Controller
         $session = new Session();
         $user = $session->getUser();
         $cart = $this->model->getCart($user->id);
-        $payment = $_POST['payment'] ?? '';
-
+        $paymentId = $_POST['payment_method'] ?? '';
+        $pay = $this->model->getPayment($paymentId);
         $data = [
             'titulo' => 'Carrito | Verificar los datos',
             'menu' => true,
-            'payment' => $payment,
+            'id' => $pay,
             'user' => $user,
             'data' => $cart,
         ];
