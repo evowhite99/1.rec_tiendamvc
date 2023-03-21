@@ -269,6 +269,8 @@ class AdminProductController extends Controller
             } else {
                 array_push($errors, 'Debes seleccionar un tipo válido');
             }
+            $currentProduct = $this->model->getProductById($id);
+            $currentImage = $currentProduct->image;
 
             if ($image) {
                 if (Validate::imageFile($_FILES['image']['tmp_name'])) {
@@ -276,8 +278,9 @@ class AdminProductController extends Controller
                     $image = strtolower($image);
 
                     if (is_uploaded_file($_FILES['image']['tmp_name'])) {
-                        move_uploaded_file($_FILES['image']['tmp_name'], 'img/' . $image);
-                        Validate::resizeImage($image, 240);
+                        if ($currentImage && file_exists('img/' . $currentImage)) {
+                            unlink('img/' . $currentImage);
+                        }                        Validate::resizeImage($image, 240);
                     } else {
                         array_push($errors, 'Error al subir el archivo de imagen');
                     }
