@@ -17,8 +17,8 @@
             <div class="form-group text-left">
                 <?php foreach ($data['payment'] as $method): ?>
                     <div class="form-check">
-                        <input required class="form-check-input" type="radio" name="payment_method" id="payment_method_<?= $method->id ?>" value="<?= $method->id ?>">
-                        <label class="form-check-label" for="payment_method_<?= $method->id ?>">
+                        <input class="form-check-input" type="radio" name="payments" id="payments<?= $method->payment_id ?>" value="<?= $method->payment_id ?>">
+                        <label class="form-check-label" for="payments<?= $method->payment_id ?>">
                             <?= $method->name ?>
                         </label>
                     </div>

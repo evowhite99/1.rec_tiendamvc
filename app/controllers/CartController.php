@@ -103,15 +103,17 @@ class CartController extends Controller
 
             $paymentMethods = $this->model->getAll();
 
-            $data = [
-                'titulo' => 'Carrito | Forma de pago',
-                'subtitle' => 'Checkout | Forma de pago',
-                'menu' => true,
-                'payment' => $paymentMethods,
 
-            ];
+                $data = [
+                    'titulo' => 'Carrito | Forma de pago',
+                    'subtitle' => 'Checkout | Forma de pago',
+                    'menu' => true,
+                    'payment' => $paymentMethods,
 
-            $this->view('carts/paymentmode', $data);
+                ];
+
+                $this->view('carts/paymentmode', $data);
+
         } else {
             header('location:' . ROOT);
 
@@ -121,22 +123,45 @@ class CartController extends Controller
 
     public function verify()
     {
+
+
         $session = new Session();
         if ($session->getLogin()) {
+            $errors = [];
 
-            $user = $session->getUser();
-        $cart = $this->model->getCart($user->id);
-        $payment_id = $_POST['payment_method'] ?? '';
-        $pay = $this->model->getPayment($payment_id);
-        $data = [
-            'titulo' => 'Carrito | Verificar los datos',
-            'menu' => true,
-            'id' => $pay,
-            'user' => $user,
-            'data' => $cart,
-        ];
+            if (empty($_POST['payments'])) {
+                array_push($errors, 'Debe seleccionar un método de pago.');
 
-        $this->view('carts/verify', $data);
+                $paymentMethods = $this->model->getAll();
+
+
+                $data = [
+                    'titulo' => 'Carrito | Forma de pago',
+                    'subtitle' => 'Checkout | Forma de pago',
+                    'menu' => true,
+                    'payment' => $paymentMethods,
+
+                ];
+                $this->view('carts/paymentmode', $data);
+
+
+            } else {
+
+
+                $user = $session->getUser();
+                $cart = $this->model->getCart($user->id);
+                $payment_id = $_POST['payments'] ?? '';
+                $pay = $this->model->getPayment($payment_id);
+                $data = [
+                    'titulo' => 'Carrito | Verificar los datos',
+                    'menu' => true,
+                    'id' => $pay,
+                    'user' => $user,
+                    'data' => $cart,
+                ];
+
+                $this->view('carts/verify', $data);
+            }
         } else {
 
             header('location:' . ROOT);
